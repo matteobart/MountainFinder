@@ -1,0 +1,6 @@
+framework module Pods_Mountain_Finder_Mountain_FinderUITests {
+  umbrella header "Pods-Mountain Finder-Mountain FinderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

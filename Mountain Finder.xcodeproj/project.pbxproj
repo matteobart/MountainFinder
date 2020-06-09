@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4B8446BBFEA372E57AA1B0 /* Pods_Mountain_Finder_Mountain_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9668C2DE8DFDF6BF88BE44 /* Pods_Mountain_Finder_Mountain_FinderUITests.framework */; };
+		8B07112EE4BD6E7187E6E08E /* Pods_Mountain_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF6C7AD9369F5AAB9DF574D /* Pods_Mountain_Finder.framework */; };
+		A2CB034BB372EA09F6AEE3A0 /* Pods_Mountain_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93F8883916A9B069808664E /* Pods_Mountain_FinderTests.framework */; };
 		A62F8EF4248DB7F400A1AE26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8EF3248DB7F400A1AE26 /* AppDelegate.swift */; };
 		A62F8EF6248DB7F400A1AE26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8EF5248DB7F400A1AE26 /* SceneDelegate.swift */; };
 		A62F8EF9248DB7F400A1AE26 /* Mountain_Finder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A62F8EF7248DB7F400A1AE26 /* Mountain_Finder.xcdatamodeld */; };
@@ -16,6 +19,9 @@
 		A62F8F03248DB7F500A1AE26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62F8F01248DB7F500A1AE26 /* LaunchScreen.storyboard */; };
 		A62F8F0E248DB7F600A1AE26 /* Mountain_FinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8F0D248DB7F600A1AE26 /* Mountain_FinderTests.swift */; };
 		A62F8F19248DB7F600A1AE26 /* Mountain_FinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8F18248DB7F600A1AE26 /* Mountain_FinderUITests.swift */; };
+		A62F8F27248DCC9000A1AE26 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8F26248DCC8F00A1AE26 /* Requests.swift */; };
+		A62F8F29248DCC9700A1AE26 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8F28248DCC9700A1AE26 /* Keys.swift */; };
+		A62F8F2D248DE73500A1AE26 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F8F2C248DE73500A1AE26 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CF6C7AD9369F5AAB9DF574D /* Pods_Mountain_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mountain_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		421FF4FAC6F16E795C1E9CC9 /* Pods-Mountain FinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain FinderTests.release.xcconfig"; path = "Target Support Files/Pods-Mountain FinderTests/Pods-Mountain FinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B9668C2DE8DFDF6BF88BE44 /* Pods_Mountain_Finder_Mountain_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mountain_Finder_Mountain_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		854778699850617EBD17FC77 /* Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0C49FB42A184A5E48A489F /* Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig"; path = "Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8DE1B401562080D95E846349 /* Pods-Mountain Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder.release.xcconfig"; path = "Target Support Files/Pods-Mountain Finder/Pods-Mountain Finder.release.xcconfig"; sourceTree = "<group>"; };
 		A62F8EF0248DB7F400A1AE26 /* Mountain Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mountain Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62F8EF3248DB7F400A1AE26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A62F8EF5248DB7F400A1AE26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +63,12 @@
 		A62F8F14248DB7F600A1AE26 /* Mountain FinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountain FinderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62F8F18248DB7F600A1AE26 /* Mountain_FinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain_FinderUITests.swift; sourceTree = "<group>"; };
 		A62F8F1A248DB7F600A1AE26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A62F8F26248DCC8F00A1AE26 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		A62F8F28248DCC9700A1AE26 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		A62F8F2C248DE73500A1AE26 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A891132DD3584FCA87D8417A /* Pods-Mountain Finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder.debug.xcconfig"; path = "Target Support Files/Pods-Mountain Finder/Pods-Mountain Finder.debug.xcconfig"; sourceTree = "<group>"; };
+		C93F8883916A9B069808664E /* Pods_Mountain_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mountain_FinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70C3FD2473F7F2DA635179E /* Pods-Mountain FinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain FinderTests.debug.xcconfig"; path = "Target Support Files/Pods-Mountain FinderTests/Pods-Mountain FinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B07112EE4BD6E7187E6E08E /* Pods_Mountain_Finder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CB034BB372EA09F6AEE3A0 /* Pods_Mountain_FinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +92,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4B8446BBFEA372E57AA1B0 /* Pods_Mountain_Finder_Mountain_FinderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0704F276FA4F0AE5BBE909B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6C7AD9369F5AAB9DF574D /* Pods_Mountain_Finder.framework */,
+				4B9668C2DE8DFDF6BF88BE44 /* Pods_Mountain_Finder_Mountain_FinderUITests.framework */,
+				C93F8883916A9B069808664E /* Pods_Mountain_FinderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A62F8EE7248DB7F400A1AE26 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +116,8 @@
 				A62F8F0C248DB7F600A1AE26 /* Mountain FinderTests */,
 				A62F8F17248DB7F600A1AE26 /* Mountain FinderUITests */,
 				A62F8EF1248DB7F400A1AE26 /* Products */,
+				EB679F79B285A44738959331 /* Pods */,
+				0704F276FA4F0AE5BBE909B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +134,12 @@
 		A62F8EF2248DB7F400A1AE26 /* Mountain Finder */ = {
 			isa = PBXGroup;
 			children = (
+				A62F8F2C248DE73500A1AE26 /* MapView.swift */,
 				A62F8EF3248DB7F400A1AE26 /* AppDelegate.swift */,
 				A62F8EF5248DB7F400A1AE26 /* SceneDelegate.swift */,
 				A62F8EFA248DB7F400A1AE26 /* ContentView.swift */,
+				A62F8F26248DCC8F00A1AE26 /* Requests.swift */,
+				A62F8F28248DCC9700A1AE26 /* Keys.swift */,
 				A62F8EFC248DB7F500A1AE26 /* Assets.xcassets */,
 				A62F8F01248DB7F500A1AE26 /* LaunchScreen.storyboard */,
 				A62F8F04248DB7F500A1AE26 /* Info.plist */,
@@ -139,6 +175,19 @@
 			path = "Mountain FinderUITests";
 			sourceTree = "<group>";
 		};
+		EB679F79B285A44738959331 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A891132DD3584FCA87D8417A /* Pods-Mountain Finder.debug.xcconfig */,
+				8DE1B401562080D95E846349 /* Pods-Mountain Finder.release.xcconfig */,
+				854778699850617EBD17FC77 /* Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig */,
+				8A0C49FB42A184A5E48A489F /* Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig */,
+				E70C3FD2473F7F2DA635179E /* Pods-Mountain FinderTests.debug.xcconfig */,
+				421FF4FAC6F16E795C1E9CC9 /* Pods-Mountain FinderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A62F8F1D248DB7F600A1AE26 /* Build configuration list for PBXNativeTarget "Mountain Finder" */;
 			buildPhases = (
+				97738DD5CBC92A7FA0A2924B /* [CP] Check Pods Manifest.lock */,
 				A62F8EEC248DB7F400A1AE26 /* Sources */,
 				A62F8EED248DB7F400A1AE26 /* Frameworks */,
 				A62F8EEE248DB7F400A1AE26 /* Resources */,
+				69DE682BB739F999C51D839E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A62F8F20248DB7F600A1AE26 /* Build configuration list for PBXNativeTarget "Mountain FinderTests" */;
 			buildPhases = (
+				2CBE024C8D67A6FC4F1499BC /* [CP] Check Pods Manifest.lock */,
 				A62F8F05248DB7F600A1AE26 /* Sources */,
 				A62F8F06248DB7F600A1AE26 /* Frameworks */,
 				A62F8F07248DB7F600A1AE26 /* Resources */,
@@ -181,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A62F8F23248DB7F600A1AE26 /* Build configuration list for PBXNativeTarget "Mountain FinderUITests" */;
 			buildPhases = (
+				A1B56765F4965E288CDF4EFF /* [CP] Check Pods Manifest.lock */,
 				A62F8F10248DB7F600A1AE26 /* Sources */,
 				A62F8F11248DB7F600A1AE26 /* Frameworks */,
 				A62F8F12248DB7F600A1AE26 /* Resources */,
+				F8E4C60115F1C4B148BC9709 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,14 +319,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CBE024C8D67A6FC4F1499BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mountain FinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69DE682BB739F999C51D839E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mountain Finder/Pods-Mountain Finder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mountain Finder/Pods-Mountain Finder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mountain Finder/Pods-Mountain Finder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97738DD5CBC92A7FA0A2924B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mountain Finder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1B56765F4965E288CDF4EFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mountain Finder-Mountain FinderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8E4C60115F1C4B148BC9709 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A62F8EEC248DB7F400A1AE26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62F8F2D248DE73500A1AE26 /* MapView.swift in Sources */,
 				A62F8EF9248DB7F400A1AE26 /* Mountain_Finder.xcdatamodeld in Sources */,
+				A62F8F29248DCC9700A1AE26 /* Keys.swift in Sources */,
 				A62F8EF4248DB7F400A1AE26 /* AppDelegate.swift in Sources */,
 				A62F8EFB248DB7F400A1AE26 /* ContentView.swift in Sources */,
+				A62F8F27248DCC9000A1AE26 /* Requests.swift in Sources */,
 				A62F8EF6248DB7F400A1AE26 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +596,7 @@
 		};
 		A62F8F1E248DB7F600A1AE26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A891132DD3584FCA87D8417A /* Pods-Mountain Finder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +617,7 @@
 		};
 		A62F8F1F248DB7F600A1AE26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DE1B401562080D95E846349 /* Pods-Mountain Finder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +638,7 @@
 		};
 		A62F8F21248DB7F600A1AE26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70C3FD2473F7F2DA635179E /* Pods-Mountain FinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +661,7 @@
 		};
 		A62F8F22248DB7F600A1AE26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 421FF4FAC6F16E795C1E9CC9 /* Pods-Mountain FinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +684,7 @@
 		};
 		A62F8F24248DB7F600A1AE26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 854778699850617EBD17FC77 /* Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +705,7 @@
 		};
 		A62F8F25248DB7F600A1AE26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0C49FB42A184A5E48A489F /* Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
