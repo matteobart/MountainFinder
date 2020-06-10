@@ -17,10 +17,9 @@ struct ContentView: View {
     
     @State var allClimbs: [Climb] = []
     @State var coord = CLLocationCoordinate2D(latitude: 37.3229978, longitude: -122.0321823)
-    @State var selected: [Bool] = Array.init(repeating: false, count: ClimbType.allCases.count)
+    @State var selected: [Bool] = Array.init(repeating: false, count: ClimbType.allCases.count) //different climbing types
     
-    @State var selectedName: String = ""
-    @State var showingClimbDetails: Bool = false
+    @State var selectedId: Int = -1 //if not negative one will show detail page
     
     var climbs: [Climb] {
         var ret: [Climb] = []
@@ -37,10 +36,10 @@ struct ContentView: View {
         }
         return ret    }
     
-    var annotations: [MKPointAnnotation] {
-        var ret: [MKPointAnnotation] = []
+    var annotations: [ClimbingPointAnnotation] {
+        var ret: [ClimbingPointAnnotation] = []
         for climb in climbs {
-            let t = MKPointAnnotation()
+            let t = ClimbingPointAnnotation(climb.id)
             t.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(climb.latitude), longitude: CLLocationDegrees(climb.longitude))
             t.title = climb.name
             t.subtitle = "\(climb.type) \(climb.rating)"
@@ -52,10 +51,10 @@ struct ContentView: View {
     //MAIN
     var body: some View {
         VStack {
-            MapView(centerCoordinate: $coord, selectedName: $selectedName, showingClimbDetails: $showingClimbDetails, annotations: annotations)
+            MapView(centerCoordinate: $coord, selectedId: $selectedId, annotations: annotations)
             SearchBar(allClimbs: $allClimbs, selected: $selected, coord: coord).environment(\.managedObjectContext, self.moc)
             Filters(selected: $selected)
-            ClimbList(climbs: climbs, coord: coord, selected: $selected)
+            ClimbList(climbs: climbs, coord: coord, selected: selected, selectedId: $selectedId)
         }.onAppear {
             self.moc.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             self.getSavedLocations()
@@ -167,20 +166,25 @@ struct Filters: View {
 struct ClimbList: View {
     var climbs: [Climb]
     var coord: CLLocationCoordinate2D
-    @Binding var selected: [Bool]
+    var selected: [Bool]
+    
+    @Binding var selectedId: Int
     
     var body: some View {
-        var tuples: [(distance: Float, climb: Climb)] = []
+        var sortedClimbs: [Climb] = []
         for climb in self.climbs {
             let d = self.getDistance(coord1: self.coord, coord2: CLLocationCoordinate2D(latitude: CLLocationDegrees(climb.latitude), longitude: CLLocationDegrees(climb.longitude)))
-            tuples.append((d, climb))
+            climb.distanceFrom = d
+            if (d < 120.0) {
+                sortedClimbs.append(climb)
+            }
         }
-        tuples = tuples.sorted(by: {$0.0 < $1.0})
+        sortedClimbs = sortedClimbs.sorted {$0.distanceFrom ?? Float(Double.infinity) < $1.distanceFrom ?? Float(Double.infinity)}
         return HStack {
             if !climbs.isEmpty {
-                List(tuples, id: \.self.climb.id) { tuple in
+                List(sortedClimbs, id: \.self.id) { climb in
                     HStack {
-                        WebImage(url: URL(string: tuple.climb.imgSqSmall!))
+                        WebImage(url: URL(string: climb.imgSqSmall!))
                             .placeholder {
                                 Rectangle().foregroundColor(.gray)
                         }
@@ -190,24 +194,32 @@ struct ClimbList: View {
                         .frame(width: 100, height: 100)
                         
                         VStack (alignment: .leading) {
-                            Text(tuple.climb.name).font(.headline)
-                            HStack { ForEach(tuple.climb.typeList, id: \.self) { Text($0.rawValue) } }
-                            Text(tuple.climb.rating)
-                            Text("\(String(format: "%.1f", tuple.climb.stars)) stars")
+                            Text(climb.name).font(.headline)
+                            HStack { ForEach(climb.typeList, id: \.self) { Text($0.rawValue) } }
+                            Text(climb.rating)
+                            Text("\(String(format: "%.1f", climb.stars)) stars")
                         }
                         Spacer()
                         VStack (alignment: .leading) {
-                            ForEach(tuple.climb.location, id: \.self) { subloc in
+                            ForEach(climb.location, id: \.self) { subloc in
                                 Text(subloc).font(.subheadline).lineLimit(1)
                             }
-                            Text("\(String(format: "%.1f", tuple.distance)) mi").font(.subheadline)
+                            if climb.distanceFrom != nil {
+                                Text("\(String(format: "%.1f", climb.distanceFrom!)) mi").font(.subheadline)
+                            }
                         }
                         
+                    }.onTapGesture {
+                        self.selectedId = climb.id
                     }
                 }
                 
             } else {
-                Text("No results")
+                if !self.selected.contains(true) {
+                    Text("Choose a Type")
+                } else {
+                    Text("No results")
+                }
             }
         }
     }

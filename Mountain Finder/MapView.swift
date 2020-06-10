@@ -11,14 +11,10 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     @Binding var centerCoordinate: CLLocationCoordinate2D
-    @Binding var selectedName: String
-    @Binding var showingClimbDetails: Bool
+    @Binding var selectedId: Int
     
     var circle: MKCircle {
         return MKCircle(center: centerCoordinate, radius: 193121)
-    }
-    var littleCircle: MKCircle {
-        return MKCircle(center: centerCoordinate, radius: 999)
     }
     var annotations: [MKPointAnnotation]
     func makeUIView(context: Context) -> MKMapView {
@@ -31,7 +27,9 @@ struct MapView: UIViewRepresentable {
         let overlays = view.overlays
         view.removeOverlays(overlays)
         view.addOverlay(circle)
-        view.addOverlay(littleCircle)
+        //16.377 is just a constant I like
+        let redDot = MKCircle(center: centerCoordinate, radius: view.region.span.longitudeDelta * 16.377)
+        view.addOverlay(redDot)
         if annotations.count != view.annotations.count {
             view.removeAnnotations(view.annotations)
             view.addAnnotations(annotations)
@@ -57,14 +55,14 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             guard let circleOverlay = overlay as? MKCircle else {return MKOverlayRenderer()}
             let circleRenderer = MKCircleRenderer(circle: circleOverlay)
-            if circleOverlay.radius > 1000 {
+            if circleOverlay.radius == 193121 { //big blue circle
                 circleRenderer.strokeColor = .blue
                 circleRenderer.fillColor = .blue
                 circleRenderer.alpha = 0.2
             } else {
                 circleRenderer.strokeColor = .red
                 circleRenderer.fillColor = .red
-                circleRenderer.alpha = 0.5
+                circleRenderer.alpha = 1
             }
             return circleRenderer
         }
@@ -87,10 +85,16 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            guard let placemark = view.annotation as? MKPointAnnotation else { return }
-            parent.selectedName = placemark.title!
-            parent.showingClimbDetails = true
+            guard let placemark = view.annotation as? ClimbingPointAnnotation else { return }
+            parent.selectedId = placemark.id
         }
 
+    }
+}
+
+class ClimbingPointAnnotation: MKPointAnnotation {
+    var id: Int
+    init(_ id: Int) {
+        self.id = id
     }
 }
