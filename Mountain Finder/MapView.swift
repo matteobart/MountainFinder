@@ -12,6 +12,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
     @Binding var centerCoordinate: CLLocationCoordinate2D
     @Binding var selectedId: Int
+    @Binding var showingDetail: Bool
     
     var circle: MKCircle {
         return MKCircle(center: centerCoordinate, radius: 193121)
@@ -87,6 +88,7 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
             guard let placemark = view.annotation as? ClimbingPointAnnotation else { return }
             parent.selectedId = placemark.id
+            parent.showingDetail = true
         }
 
     }

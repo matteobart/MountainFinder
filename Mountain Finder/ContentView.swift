@@ -17,9 +17,10 @@ struct ContentView: View {
     
     @State var allClimbs: [Climb] = []
     @State var coord = CLLocationCoordinate2D(latitude: 37.3229978, longitude: -122.0321823)
-    @State var selected: [Bool] = Array.init(repeating: false, count: ClimbType.allCases.count) //different climbing types
+    @State var selected: [Bool] = Array.init(repeating: true, count: ClimbType.allCases.count) //different climbing types
     
-    @State var selectedId: Int = -1 //if not negative one will show detail page
+    @State var selectedId: Int = -1
+    @State var showingDetail: Bool = false
     
     var climbs: [Climb] {
         var ret: [Climb] = []
@@ -51,10 +52,12 @@ struct ContentView: View {
     //MAIN
     var body: some View {
         VStack {
-            MapView(centerCoordinate: $coord, selectedId: $selectedId, annotations: annotations)
+            MapView(centerCoordinate: $coord, selectedId: $selectedId, showingDetail: $showingDetail, annotations: annotations)
             SearchBar(allClimbs: $allClimbs, selected: $selected, coord: coord).environment(\.managedObjectContext, self.moc)
             Filters(selected: $selected)
-            ClimbList(climbs: climbs, coord: coord, selected: selected, selectedId: $selectedId)
+            ClimbList(climbs: climbs, coord: coord, selected: selected, selectedId: $selectedId, showingDetail: $showingDetail)
+        }.sheet(isPresented: $showingDetail) {
+            ClimbingDetailView(climb: self.climbs.first { $0.id == self.selectedId }!, showingDetail: self.$showingDetail)
         }.onAppear {
             self.moc.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             self.getSavedLocations()
@@ -169,6 +172,7 @@ struct ClimbList: View {
     var selected: [Bool]
     
     @Binding var selectedId: Int
+    @Binding var showingDetail: Bool
     
     var body: some View {
         var sortedClimbs: [Climb] = []
@@ -197,7 +201,8 @@ struct ClimbList: View {
                             Text(climb.name).font(.headline)
                             HStack { ForEach(climb.typeList, id: \.self) { Text($0.rawValue) } }
                             Text(climb.rating)
-                            Text("\(String(format: "%.1f", climb.stars)) stars")
+                            StarView(numStars: climb.stars)
+                            //Text("\(String(format: "%.1f", climb.stars)) stars")
                         }
                         Spacer()
                         VStack (alignment: .leading) {
@@ -211,6 +216,7 @@ struct ClimbList: View {
                         
                     }.onTapGesture {
                         self.selectedId = climb.id
+                        self.showingDetail = true
                     }
                 }
                 
