@@ -20,14 +20,14 @@ struct ClimbingDetailView: View {
             VStack {
                 ZStack {
                     WebImage(url: URL(string: self.climb.imgMedium!.replacingOccurrences(of: "medium", with: "large")))
-                        .placeholder { EmptyView() }
+                        .placeholder {
+                            Image("mountainLarge").resizable()//.frame(width: 100, height: 100)
+                                .scaledToFill().clipped() }
                         .frame(
                             idealWidth: geo.size.width,
                             idealHeight: 2*geo.size.height/5,
                             maxHeight: 2*geo.size.height/5)
                         .scaledToFill().clipped()
-                    
-                    
                     VStack {
                         ZStack {
                             Text(self.climb.name).font(.headline)
@@ -37,7 +37,6 @@ struct ClimbingDetailView: View {
                                 }.font(.headline).padding()
                                 Spacer()
                             }
-                            
                         }.background(Color.gray.opacity(0.7)).frame(width: geo.size.width) //set frame here otherwise it will be the same size as the image
                         Spacer()
                     }

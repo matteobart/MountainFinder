@@ -49,7 +49,7 @@
 		854778699850617EBD17FC77 /* Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0C49FB42A184A5E48A489F /* Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig"; path = "Target Support Files/Pods-Mountain Finder-Mountain FinderUITests/Pods-Mountain Finder-Mountain FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8DE1B401562080D95E846349 /* Pods-Mountain Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mountain Finder.release.xcconfig"; path = "Target Support Files/Pods-Mountain Finder/Pods-Mountain Finder.release.xcconfig"; sourceTree = "<group>"; };
-		A62F8EF0248DB7F400A1AE26 /* Mountain Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mountain Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62F8EF0248DB7F400A1AE26 /* Mtn Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mtn Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62F8EF3248DB7F400A1AE26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A62F8EF5248DB7F400A1AE26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A62F8EF8248DB7F400A1AE26 /* Mountain_Finder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mountain_Finder.xcdatamodel; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		A62F8EF1248DB7F400A1AE26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A62F8EF0248DB7F400A1AE26 /* Mountain Finder.app */,
+				A62F8EF0248DB7F400A1AE26 /* Mtn Finder.app */,
 				A62F8F09248DB7F600A1AE26 /* Mountain FinderTests.xctest */,
 				A62F8F14248DB7F600A1AE26 /* Mountain FinderUITests.xctest */,
 			);
@@ -210,7 +210,7 @@
 			);
 			name = "Mountain Finder";
 			productName = "Mountain Finder";
-			productReference = A62F8EF0248DB7F400A1AE26 /* Mountain Finder.app */;
+			productReference = A62F8EF0248DB7F400A1AE26 /* Mtn Finder.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A62F8F08248DB7F600A1AE26 /* Mountain FinderTests */ = {
@@ -613,7 +613,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MatteoBartalini.Mountain-Finder";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mtn Finder";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,7 +634,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MatteoBartalini.Mountain-Finder";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mtn Finder";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

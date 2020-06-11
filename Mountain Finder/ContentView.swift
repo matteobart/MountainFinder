@@ -149,7 +149,7 @@ struct Filters: View {
             GeometryReader { geo in // when adding geo reader... will now take up maximum amount of space
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    Spacer(minLength: 20)
+                    Spacer(minLength: 10)
                     ForEach(0..<ClimbType.allCases.count, id: \.self) { i in
                         Button("\(ClimbType.allCases[i].rawValue)") {
                             self.selected[i].toggle()
@@ -159,7 +159,7 @@ struct Filters: View {
                         .cornerRadius(15)
                         .foregroundColor(.white)
                     }
-                    Spacer(minLength: 20)
+                    Spacer(minLength: 10)
                 }.frame(minWidth: geo.size.width) // this allow you to center the buttons (larger screens iPad)
             }
             }
@@ -191,8 +191,12 @@ struct ClimbList: View {
                 List(sortedClimbs, id: \.self.id) { climb in
                     HStack {
                         WebImage(url: URL(string: climb.imgSqSmall!))
-                            .placeholder {
-                                Rectangle().foregroundColor(.gray)
+                        .placeholder {
+                            Image("mountainLarge")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .scaledToFit()
+                                .clipped()
                         }
                         .indicator(.activity)
                         .transition(.fade(duration: 0.5))
