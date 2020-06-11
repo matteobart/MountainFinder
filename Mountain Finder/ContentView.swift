@@ -149,6 +149,7 @@ struct Filters: View {
             GeometryReader { geo in // when adding geo reader... will now take up maximum amount of space
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
+                    Spacer(minLength: 20)
                     ForEach(0..<ClimbType.allCases.count, id: \.self) { i in
                         Button("\(ClimbType.allCases[i].rawValue)") {
                             self.selected[i].toggle()
@@ -158,6 +159,7 @@ struct Filters: View {
                         .cornerRadius(15)
                         .foregroundColor(.white)
                     }
+                    Spacer(minLength: 20)
                 }.frame(minWidth: geo.size.width) // this allow you to center the buttons (larger screens iPad)
             }
             }
