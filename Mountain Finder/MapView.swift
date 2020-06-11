@@ -8,18 +8,24 @@
 
 import SwiftUI
 import MapKit
-
+import CoreLocation
 struct MapView: UIViewRepresentable {
     @Binding var centerCoordinate: CLLocationCoordinate2D
     @Binding var selectedId: Int
     @Binding var showingDetail: Bool
+    
+    var locationManager = CLLocationManager()
     
     var circle: MKCircle {
         return MKCircle(center: centerCoordinate, radius: 193121)
     }
     var annotations: [MKPointAnnotation]
     func makeUIView(context: Context) -> MKMapView {
+        locationManager.requestWhenInUseAuthorization()
         let mapView = MKMapView()
+        mapView.showsUserLocation = true
+        mapView.showsScale = true
+        mapView.showsCompass = true
         mapView.delegate = context.coordinator
         return mapView
     }
@@ -69,6 +75,9 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if annotation.title == "My Location" && !annotation.isKind(of: ClimbingPointAnnotation.self) {
+                return nil //shows blue dot for user location
+            }
             let identifier = "climbLoc"
 
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
