@@ -112,3 +112,7 @@ extension Array {
         return lo // not found, would be inserted at position lo
     }
 }
+
+func fourDecPrecision(float: Float) -> String {
+    return String(format: "%.4f", float)
+}

@@ -146,6 +146,7 @@ struct Filters: View {
     @Binding var selected: [Bool]
     var body: some View {
         VStack {
+            GeometryReader { geo in // when adding geo reader... will now take up maximum amount of space
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(0..<ClimbType.allCases.count, id: \.self) { i in
@@ -157,12 +158,11 @@ struct Filters: View {
                         .cornerRadius(15)
                         .foregroundColor(.white)
                     }
-                    
-                }
+                }.frame(minWidth: geo.size.width) // this allow you to center the buttons (larger screens iPad)
             }
-        }
+            }
+        }.frame(height: 60) // ... so limit the height
     }
-    
     
 }
 
@@ -202,10 +202,9 @@ struct ClimbList: View {
                             HStack { ForEach(climb.typeList, id: \.self) { Text($0.rawValue) } }
                             Text(climb.rating)
                             StarView(numStars: climb.stars)
-                            //Text("\(String(format: "%.1f", climb.stars)) stars")
                         }
                         Spacer()
-                        VStack (alignment: .leading) {
+                        VStack (alignment: .trailing) {
                             ForEach(climb.location, id: \.self) { subloc in
                                 Text(subloc).font(.subheadline).lineLimit(1)
                             }
@@ -214,12 +213,11 @@ struct ClimbList: View {
                             }
                         }
                         
-                    }.onTapGesture {
+                        }.contentShape(Rectangle()).onTapGesture {
                         self.selectedId = climb.id
                         self.showingDetail = true
                     }
                 }
-                
             } else {
                 if !self.selected.contains(true) {
                     Text("Choose a Type")
@@ -229,7 +227,7 @@ struct ClimbList: View {
             }
         }
     }
-        
+    
     func getDistance(coord1: CLLocationCoordinate2D, coord2: CLLocationCoordinate2D) -> Float {
         let p1 = MKMapPoint(coord1)
         let p2 = MKMapPoint(coord2)
